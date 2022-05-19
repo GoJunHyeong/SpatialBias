@@ -35,7 +35,3 @@ In eca_like_nlc.py, There are two hyper parameters, gc_group & gc_divide_factor
 1. `gc_group = [bool, bool, bool, bool]`
 This determines whether to create a global context for each layer of the network.
 --> 1 for True, 0 for False.
-
-2. `gc_divide_factor = 64` (default)
-divide factor of channel reduction before global convolution, and also the number of global contexts to be added. (16,32,64...)
-So, When 64 is selected, the input channel 64 is dimensionally reduced to 1 to generate one global context.
