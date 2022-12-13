@@ -1,5 +1,4 @@
-# SpatialBias
-Spatial Bias for Attetion-free Non-local Neural Networks
+# Spatial Bias for Attetion-free Non-local Neural Networks
 
 ![sb_overflow](https://user-images.githubusercontent.com/90232305/207277348-4679dbe5-e4b5-45c2-a167-b0acd14b7ebf.jpg)
 
