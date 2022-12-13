@@ -1,5 +1,5 @@
 # SpatialBias
-Attention-free Non-local Neural Network
+Spatial Bias for Attetion-free Non-local Neural Networks
 
 ## Training Script
 
@@ -21,17 +21,9 @@ Attention-free Non-local Neural Network
 
 4. Training (you should change your_imagenet_dir in the code below)
 ```bash
-CUDA_VISIBLE_DEVICES=0,3,6,9 python3 -m torch.distributed.launch 
-          --nproc_per_node=4 --master_port=12346 train.py your_imagenet_dir --model spatial_bias --aa rand-m7-mstd0.5-inc1 
+torchrun --nproc_per_node=4 --master_port=12348 train.py imageNet --model sb_resnet50 --cuda 0,1,2,3 --aa rand-m7-mstd0.5-inc1 
           --mixup .1 --cutmix 1.0 --aug-repeats 3 --remode pixel --reprob 0.0 --crop-pct 0.95 --drop-path .05 --smoothing 0.0 
           --bce-loss --bce-target-thresh 0.2 --opt lamb --weight-decay .02 --sched cosine --epochs 300 --lr 3.5e-3 
           --warmup-lr 1e-4 -b 256 -j 16 --amp --channels-last --log-wandb --pin-mem
 ```
 
-
-## Hyper parameters
-In eca_like_nlc.py, There are two hyper parameters, gc_group & gc_divide_factor
-
-1. `gc_group = [bool, bool, bool, bool]`
-This determines whether to create a global context for each layer of the network.
---> 1 for True, 0 for False.
