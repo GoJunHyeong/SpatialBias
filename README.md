@@ -19,9 +19,10 @@ Spatial Bias for Attetion-free Non-local Neural Networks
 3. Run `train.py` with one of below argument
 
 
-4. Training (you should change your_imagenet_dir in the code below)
+4. Training Scripts(you should change your_imagenet_dir in the code below)
+For the training script, refer to timm(https://github.com/rwightman/pytorch-image-models).
 ```bash
-torchrun --nproc_per_node=4 --master_port=12348 train.py imageNet --model sb_resnet50 --cuda 0,1,2,3 --aa rand-m7-mstd0.5-inc1 
+torchrun --nproc_per_node=4 --master_port=12348 train.py your_imagenet_dir --model sb_resnet50 --cuda 0,1,2,3 --aa rand-m7-mstd0.5-inc1 
           --mixup .1 --cutmix 1.0 --aug-repeats 3 --remode pixel --reprob 0.0 --crop-pct 0.95 --drop-path .05 --smoothing 0.0 
           --bce-loss --bce-target-thresh 0.2 --opt lamb --weight-decay .02 --sched cosine --epochs 300 --lr 3.5e-3 
           --warmup-lr 1e-4 -b 256 -j 16 --amp --channels-last --log-wandb --pin-mem
