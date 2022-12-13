@@ -1,7 +1,7 @@
 # SpatialBias
 Spatial Bias for Attetion-free Non-local Neural Networks
 
-![spatial_bias_overflow](https://user-images.githubusercontent.com/90232305/207276491-dd596ab6-88f2-48ca-96fc-bc15a64c1482.png)
+![sb_overflow](https://user-images.githubusercontent.com/90232305/207276951-3e7f3f15-8aba-4778-b11c-2dbd1faf7210.jpg)
 
 
 ## Training Script
