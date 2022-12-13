@@ -1,6 +1,9 @@
 # SpatialBias
 Spatial Bias for Attetion-free Non-local Neural Networks
 
+![spatial_bias_overflow](https://user-images.githubusercontent.com/90232305/207276491-dd596ab6-88f2-48ca-96fc-bc15a64c1482.png)
+
+
 ## Training Script
 
 1. Clone this repo & install required library (assume that you have installed pytorch>1.5.0 and torchvision>0.7.0)
